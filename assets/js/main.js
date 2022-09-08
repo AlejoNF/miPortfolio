@@ -1,5 +1,51 @@
+/* ===== GET HTML ELEMENTS ===== */
 const header = document.getElementById('header')
 const menu = document.getElementById('nav-menu')
+const formContainer = document.querySelector('.contact__form')
+const checkbox = document.getElementById('terms')
+const btnSubmit = document.querySelector('.btn--submit')
+
+/* ===== LISTENERS ===== */
+checkbox.addEventListener('change', ({target}) => {
+  if (target.checked) {
+    btnSubmit.disabled = false
+  } else {
+    btnSubmit.disabled = true
+  }
+})
+
+formContainer.addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const email = 'your@email.com'
+  const BASE_URL = `https://formsubmit.co/ajax/${email}`
+  
+  const input = e.currentTarget.elements
+
+  const formData = {
+    name: input.name.value,
+    lastname: input.lastname.value,
+    email: input.email.value,
+    tel: input.tel.value,
+    service: input.service.value,
+    message: input.message.value
+  }
+
+  window.fetch(BASE_URL, {
+    method: "POST",
+    headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+
+  e.currentTarget.reset()
+  btnSubmit.disabled = true
+})
+
 
 header.addEventListener('click', e => {
   const target = e.target
@@ -97,3 +143,5 @@ mixitup('.portfolio__projects', {
     duration: 300
   }
 }).filter('all')
+
+

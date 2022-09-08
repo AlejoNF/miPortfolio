@@ -305,11 +305,47 @@
     </div>
 
     <!-- Contacto -->
+    <h2 class="contactLabel">Contacto</h2>
     <section class="contact" id="contact">
       
-      <h2 class="contactLabel">Contacto</h2>
       
-      <div class="contact__phone">
+      <section class="contact grid--container">
+       
+        <form class="contact__form grid--container">
+    
+          <select class="contact__form--input" id="service">
+            <option selected disabled>-- Selecciona un servicio --</option>
+            <option value="ui/ux">Diseño UI/UX</option>
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="otro">Otro</option>
+          </select>
+    
+          <div class="contact__form--group form--group-double">
+            <input class="contact__form--input" type="text" id="name" placeholder="Nombre" required>
+            <input class="contact__form--input" type="text" id="lastname" placeholder="Apellido" required>
+          </div>
+    
+          <div class="contact__form--group form--group-double">
+            <input class="contact__form--input" type="email" id="email" placeholder="Correo electrónico" required>
+            <input class="contact__form--input" type="tel" id="tel" placeholder="Teléfono">
+          </div>
+    
+          <textarea class="contact__form--input" id="message" placeholder="Cuentanos esa idea genial que tienes en mente!"></textarea>
+    
+          <div class="contact__form--group">
+            <input class="contact__form--input" type="checkbox" id="terms">
+            <label class="contact__form--label" for="terms">He leído y estoy de acuerdo con <a href="#">los términos y condiciones</a>.</label>
+          </div>
+    
+          <div class="contact__form--group contact__buttons">
+            <div class="contact__text required--msg">Campos obligatorios</div>
+            <button class="contact__button btn--submit" type="submit" disabled>Enviar</button>
+          </div>
+    
+        </form>
+      
+      <!-- <div class="contact__phone">
         <img class="contact__phone--icon" src="assets/iconos/phone.svg" alt="phone icon">
         <p class="contact__phone--phone">Phone Number</p>
         <p class="contact__phone--num">313 720 20 20</p>
@@ -319,13 +355,23 @@
         <img class="contact__email--icon" src="assets/iconos/mail.svg" alt="email icon">
         <p class="contact__email--title">Email</p>
         <p class="contact__email--mail">example@me.com</p>
-        <br><br>
+        <br><br> -->
 
 
       </div>
     </section>
 
   </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <p class="footer">
+        <span class="footer--size">Un pie de pagina</span> 
+      </p>
+      <div><img class="footer__foot" src="assets/img/foot.png" alt="footer icon"> </div>
+      
+    </div>
+  </footer>
   
 
   
