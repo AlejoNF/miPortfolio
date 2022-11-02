@@ -16,7 +16,7 @@ checkbox.addEventListener('change', ({target}) => {
 
 formContainer.addEventListener('submit', async (e) => {
   e.preventDefault()
-  const email = 'f1f9c9cbc224a5ff46211d0466da700d'
+  const email = 'your@email.com'
   const BASE_URL = `https://formsubmit.co/ajax/${email}`
   
   const input = e.currentTarget.elements

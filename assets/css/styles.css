@@ -8,7 +8,7 @@
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: #09567A;
-  --second-color: hsl(126, 99%, 26%);
+  --second-color: #027C21;
   --text-color: hsl(0, 0%, 20%);
   --text-color-light: hsl(203, 8%, 80%);
   --body-color: hsl(0, 100%, 100%);
@@ -74,8 +74,7 @@ img {
   height: auto;
 }
 
-/* Reciclando clases */
-
+/*=============== REUSABLE CSS CLASSES ===============*/
 .main {
   overflow: hidden;
 }
@@ -93,9 +92,7 @@ img {
   display: grid;
 }
 
-/* Clases de header y nav* */
-
-
+/*=============== HEADER & NAV ===============*/
 .header {
   width: 100%;
   position: fixed;
@@ -172,14 +169,15 @@ img {
   cursor: pointer;
 }
 
-/* menu a la derecha */
-
+/* Show menu */
 .show--menu {
   right: 0;
 }
 
-/* inicio */
+/* Active link */
 
+
+/*=============== HOME ===============*/
 .home {
   background-color: var(--first-color);
 }
@@ -217,7 +215,6 @@ img {
 }
 
 .home__image {
-  
   position: relative;
   max-width: 300px;
   width: 100%;
@@ -226,7 +223,6 @@ img {
   justify-content: center;
   align-items: center;
   order: 1;
-  
 }
 
 .home__image--img {
@@ -256,9 +252,85 @@ img {
   color: var(--first-color);
 }
 
+/* balloon */
+.balloon {
+  position: absolute;
+  background-color: #fff;
+  padding: .75rem 1.5rem;
+  border-radius: 50px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
+.balloon--lf {
+  top: 2rem;
+  left: 0;
+}
 
-/* sobre mi */
+.balloon--rt {
+  bottom: 1rem;
+  right: 0;
+}
+
+.balloon__title {
+  font-size: var(--smaller-font-size);
+  font-weight: 400;
+}
+
+.balloon__subtitle {
+  font-weight: var(--font-semi-bold);
+  color: var(--second-color);
+}
+
+/*=============== SUSCRIBE ===============*/
+.suscribe {
+  transform: translateY(-.75rem);
+}
+
+.suscribe__container {
+  background-color: var(--suscribe-color);
+  padding: 25px 35px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+
+.suscribe__title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.suscribe__form {
+  padding: 2px;
+  border-radius: 50px;
+  background-color: #ede4db;
+  grid-template-columns: 1fr .5fr;
+}
+
+.suscribe__input {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 50px;
+  padding-left: 1rem;
+  border: none;
+  outline: none;
+}
+
+.suscribe__button {
+  background-color: var(--first-color);
+  color: white;
+  font-size: 1rem;
+  padding: 7px 10px;
+  border-radius: 50px;
+  border: none;
+}
+
+/*=============== ABOUT ===============*/
 .about__container {
   padding: 5rem 0 2rem;
   display: flex;
@@ -301,7 +373,7 @@ img {
   cursor: pointer;
 }
 
-/* Titulos y educacion */
+/* TITULOS Y EDUCACION */
 
 .education__container {
   padding: 2rem 0;
@@ -344,8 +416,7 @@ img {
   font-size: var(--smaller-font-size);
 }
 
-/* habilidades */
-
+/*=============== SKILLS ===============*/
 .skills__container {
   padding: 5rem 0 2rem;
   grid-template-columns: 1fr;
@@ -389,8 +460,7 @@ img {
   row-gap: .5rem;
 }
 
-/* Experiencia */
-
+/*=============== EXPERIENCE ===============*/
 .experience {
   background-color: var(--suscribe-color);
 }
@@ -436,8 +506,7 @@ img {
   background-color: var(--second-color);
 }
 
-/* Portfolio */
-
+/*=============== PORTFOLIO ===============*/
 .portfolio__container {
   padding: 5rem 0 2rem;
 }
@@ -475,6 +544,7 @@ img {
   row-gap: 1rem;
 }
 
+/*=============== CONTACT ===============*/
 /* contacto */
 
 .contact{
@@ -620,14 +690,117 @@ textarea {
   cursor: pointer;
 }
 
-.footer{
-  display: flex;
-  justify-content: center;
-  
+.footer {
+  background-color: var(--first-color);
+  color:white;
 }
 
-/* responsividad dispositivos */
-@media screen and (min-width: 767px) {
+.footer__container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer__copy {
+  color: #ccc;
+}
+
+.copy--size {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .home__container {
+    padding: 4rem 0 2rem;
+  }
+
+  .home__title {
+    font-size: 1.5rem;
+  }
+
+  .home__description {
+    color: white;
+    font-size: .75rem;
+  }
+
+  .home__social--link {
+    width: 35px;
+    height: 35px;
+  }
+
+  .home__social--icon {
+    font-size: 1.3rem;
+  }
+
+  .balloon {
+    padding: .5rem 1rem;
+  }
+
+  .suscribe__container {
+    padding: 15px;
+    row-gap: 1rem;
+  }
+
+  .suscribe__title {
+    font-size: .75rem;
+  }
+
+  .suscribe__button {
+    font-size: .75rem;
+  }
+
+  .experience__data--title {
+    font-size: .975rem;
+  }
+
+  .experience__data--date {
+    font-size: .75rem;
+  }
+
+  .contact__data {
+    row-gap: 2rem;
+  }
+
+  .contact__info--icon {
+    padding: 15px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .education__data {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+
+  .education__card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: .25rem;
+  }
+
+  .skills__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio__projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 400px) {
   .container {
     margin-inline: auto;
   }
@@ -702,5 +875,7 @@ textarea {
 }
 
 
+
+/* For large devices */
 
 
